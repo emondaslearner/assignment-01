@@ -1,4 +1,4 @@
-TypeScript এ Interface এবং Type এর মধ্যে পার্থক্য
+### TypeScript এ Interface এবং Type এর মধ্যে পার্থক্য
 
 Interface এবং Type দুটোই TypeScript এ টাইপ ডিফাইন করার জন্য আমরা ব্যবহার করি , কিন্তু এগুলোর মধ্যে পার্থক্য আছে।
 
@@ -37,7 +37,7 @@ type Staff = Teacher | { name: string, role: string }
 
 
 
-TypeScript এ keyof কীওয়ার্ড ব্যবহার
+### TypeScript এ keyof কীওয়ার্ড ব্যবহার
 
 keyof TypeScript এ ব্যবহার হয় কোনো অবজেক্ট টাইপের সব key বের করার জন্য। 
 উদাহরণ:

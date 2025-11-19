@@ -61,20 +61,40 @@ const printBookDetails = (book: Book) => {
     return `Title: ${title}, Author: ${author}, Published: ${publishedYear}, Available: ${availability}`
 }
 
-type ArrType = Array<number | string>
-const getUniqueValues = (arr1: ArrType, arr2: ArrType): ArrType => {
-    const unique: ArrType = []
+type DateType = Array<number | string>
+const getUniqueValues = (arr1: DateType, arr2: DateType): DateType => {
+    const uniqueValue: DateType = []
 
-    const pushIfMissing = (value: number | string) => {
-        if (!unique.includes(value)) {
-            unique.push(value)
+
+    for (let i = 0; i < arr1.length; i++) {
+        let duplicateFound = false
+        for (let j = 0; j < uniqueValue.length; j++) {
+            if (arr1[i] === uniqueValue[j]) {
+                duplicateFound = true
+                break;
+            }
+        }
+
+        if (!duplicateFound) {
+            uniqueValue[uniqueValue.length] = arr1[i]
         }
     }
 
-    arr1.forEach(pushIfMissing)
-    arr2.forEach(pushIfMissing)
+    for (let i = 0; i < arr2.length; i++) {
+        let found = false
+        for (let j = 0; j < uniqueValue.length; j++) {
+            if (arr2[i] === uniqueValue[j]) {
+                found = true
+                break
+            }
+        }
 
-    return unique
+        if (!found) {
+            uniqueValue[uniqueValue.length] = arr2[i]
+        }
+    }
+
+    return uniqueValue
 }
 
 type Product = {
